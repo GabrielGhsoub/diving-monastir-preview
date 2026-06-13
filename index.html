@@ -11,9 +11,10 @@
 <meta property="og:title" content="SAAM Diving Monastir | Plongee en Tunisie">
 <meta property="og:description" content="Baptemes, explorations et plongees sur epaves a Monastir. Equipe brevetee CMAS, FFESSM, PADI, SSI. Reservez en ligne.">
 <meta property="og:url" content="https://gabrielghsoub.github.io/diving-monastir-preview/">
-<meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=630&fit=crop&q=80">
+<meta property="og:image" content="https://gabrielghsoub.github.io/diving-monastir-preview/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2300B3A6'/%3E%3Cpath d='M8 18c3-4 13-4 16 0' stroke='white' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='11' r='2.4' fill='white'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/hero-1600.webp" imagesrcset="img/hero-900.webp 900w, img/hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -84,7 +85,7 @@ header.scrolled .burger{color:var(--abyss)}
 .msheet .x{position:absolute;top:22px;right:22px;background:none;border:0;color:#fff;cursor:pointer}
 
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);z-index:0}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0A2540 url('data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACQAwCdASoUAA0APu1iqk2ppaQiMAgBMB2JZgCdLwABlMdocmaUAP1ua/2Hy00C6YIGzYkLcj4GN9JgK/YpR+7SfGIEHNF3AiEgfjCDB72T6pYMwAA=') center/cover;transform:scale(1.04);z-index:0}
 .hero::after{content:"";position:absolute;inset:0;background:var(--overlay);z-index:1}
 .hero .wrap{position:relative;z-index:2;padding-top:80px;padding-bottom:40px}
 .hero .eyebrow{color:var(--aqua)}
@@ -221,6 +222,9 @@ section.block{padding:clamp(64px,8vw,104px) 0}
 .cinfo .ci b{display:block;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--aqua);margin-bottom:2px}
 .cinfo .ci a,.cinfo .ci span{color:rgba(255,255,255,.92)}
 .cmap{border-radius:20px;overflow:hidden;min-height:320px;border:1px solid rgba(255,255,255,.15)}
+
+.mapfacade{width:100%;height:100%;min-height:320px;cursor:pointer;background:linear-gradient(135deg,#0D3B66,#1E6091);display:grid;place-items:center;color:#fff;text-align:center;font-weight:600}
+.mapfacade:hover{filter:brightness(1.08)}
 .cmap iframe{width:100%;height:100%;min-height:320px;border:0;filter:grayscale(.15) contrast(1.05)}
 
 footer{background:#06192e;color:rgba(255,255,255,.66);padding:46px 0 26px}
@@ -370,7 +374,7 @@ footer a:hover{color:var(--aqua)}
 
 <main id="main">
 <section class="hero">
- <img class="hero-img" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1800&q=80" alt="" fetchpriority="high">
+ <img class="hero-img" src="img/hero-1600.webp" srcset="img/hero-900.webp 900w, img/hero-1600.webp 1600w" sizes="100vw" alt="" fetchpriority="high" width="1600" height="1066" decoding="async">
  <div class="wrap">
    <div class="eyebrow" data-i18n="hero.eyebrow">Centre de plongée · Monastir, Tunisie · depuis 2008</div>
    <h1 data-i18n="hero.title">Plongez en Méditerranée, au cœur de Monastir.</h1>
@@ -462,7 +466,7 @@ footer a:hover{color:var(--aqua)}
          <span class="w">Grand cargo · 48-58 m</span>
        </div>
      </div>
-     <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=800&q=80" alt="Récif et faune marine de la baie de Monastir" loading="lazy" decoding="async" width="800" height="600">
+     <img src="img/reef-900.webp" alt="Récif et faune marine de la baie de Monastir" loading="lazy" decoding="async" width="800" height="600">
    </div>
  </div>
 </section>
@@ -503,12 +507,12 @@ footer a:hover{color:var(--aqua)}
      <h2 data-i18n="gal.title">Un aperçu de nos plongées.</h2>
    </div>
    <div class="gal rv">
-     <a href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?w=900&q=80" alt="Plongeur explorant un récif" loading="lazy" decoding="async"></a>
-     <a href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80" alt="Banc de poissons" loading="lazy" decoding="async"></a>
-     <a href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=600&q=80" alt="Tortue de mer" loading="lazy" decoding="async"></a>
-     <a href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1502209524164-acea936639a2?w=600&q=80" alt="Bateau de plongée sur la mer" loading="lazy" decoding="async"></a>
-     <a href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1559825481-12a05cc00344?w=600&q=80" alt="Plongeur en descente" loading="lazy" decoding="async"></a>
-     <a href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=900&q=80" alt="Corail et poissons" loading="lazy" decoding="async"></a>
+     <a href="#" onclick="return false"><img src="img/a1-900.webp" alt="Plongeur explorant un récif" loading="lazy" decoding="async"></a>
+     <a href="#" onclick="return false"><img src="img/fish-900.webp" alt="Banc de poissons" loading="lazy" decoding="async"></a>
+     <a href="#" onclick="return false"><img src="img/turtle-900.webp" alt="Tortue de mer" loading="lazy" decoding="async"></a>
+     <a href="#" onclick="return false"><img src="img/boat-900.webp" alt="Bateau de plongée sur la mer" loading="lazy" decoding="async"></a>
+     <a href="#" onclick="return false"><img src="img/a2-900.webp" alt="Plongeur en descente" loading="lazy" decoding="async"></a>
+     <a href="#" onclick="return false"><img src="img/coral-900.webp" alt="Corail et poissons" loading="lazy" decoding="async"></a>
    </div>
  </div>
 </section>
@@ -516,7 +520,7 @@ footer a:hover{color:var(--aqua)}
 <section class="block" id="apropos" style="background:var(--card)">
  <div class="wrap">
    <div class="about">
-     <img class="bigp rv" src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=900&q=80" alt="Plongeur dans le bleu de la Méditerranée" loading="lazy" decoding="async" width="900" height="600">
+     <img class="bigp rv" src="img/a3-900.webp" alt="Plongeur dans le bleu de la Méditerranée" loading="lazy" decoding="async" width="900" height="600">
      <div class="rv">
        <div class="eyebrow" data-i18n="about.eyebrow">Le club et le bateau</div>
        <h2 style="font-size:clamp(1.9rem,3.5vw,2.7rem);margin:.22em 0 .4em" data-i18n="about.title">Une équipe brevetée, un bateau rien que pour la plongée.</h2>
@@ -582,7 +586,7 @@ footer a:hover{color:var(--aqua)}
        </div>
      </div>
      <div class="cmap rv">
-       <iframe loading="lazy" title="Carte Monastir" src="https://www.openstreetmap.org/export/embed.html?bbox=10.78%2C35.74%2C10.86%2C35.80&amp;layer=mapnik&amp;marker=35.7707%2C10.8262"></iframe>
+       <div class="mapfacade" onclick="loadMap(this)" role="button" tabindex="0" aria-label="Charger la carte" onkeydown="if(event.key==='Enter')loadMap(this)"><div class="mapinner"><svg class="ic" width="34" height="34" viewBox="0 0 24 24" style="stroke:#fff;margin:0 auto 8px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>Monastir, Tunisie<br><small style="opacity:.8">Cliquez pour afficher la carte</small></div></div>
      </div>
    </div>
  </div>
@@ -662,17 +666,17 @@ const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const
 
 // activities (data-driven so language applies)
 const ACTS=[
- {k:'bapteme',img:'1530053969600-caed2596d242',price:'45&nbsp;€',unit:'act.unit'},
- {k:'explo',img:'1559825481-12a05cc00344',price:'45&nbsp;€',unit:'act.unit'},
- {k:'form',img:'1682687982501-1e58ab814714',price:'devis',unit:''},
- {k:'wreck',img:'1582967788606-a171c1080cb0',price:'75&nbsp;€',unit:'act.unit2'},
- {k:'snork',img:'1437622368342-7a3d73a34c8f',price:'25&nbsp;€',unit:'act.unitS'},
- {k:'night',img:'1559827260-dc66d52bef19',price:'devis',unit:''}
+ {k:'bapteme',img:'a1',price:'45&nbsp;€',unit:'act.unit'},
+ {k:'explo',img:'a2',price:'45&nbsp;€',unit:'act.unit'},
+ {k:'form',img:'a3',price:'devis',unit:''},
+ {k:'wreck',img:'reef',price:'75&nbsp;€',unit:'act.unit2'},
+ {k:'snork',img:'turtle',price:'25&nbsp;€',unit:'act.unitS'},
+ {k:'night',img:'fish',price:'devis',unit:''}
 ];
 const BMAP={bapteme:'bapteme',explo:'exploration',form:'formation',wreck:'exploration',snork:'snorkeling',night:'exploration'};
 function buildActivities(){$('#actgrid').innerHTML=ACTS.map(a=>{
  const price=a.price==='devis'?`<span class="price">${t('act.devis')}</span>`:`<span class="price">${a.price} <small>${t(a.unit)}</small></span>`;
- return `<article class="acard rv"><div class="ph"><img src="https://images.unsplash.com/photo-${a.img}?w=800&q=80" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="tag">${t('act.'+a.k+'.tag')}</span></div>
+ return `<article class="acard rv"><div class="ph"><img src="img/${a.img}-900.webp" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="tag">${t('act.'+a.k+'.tag')}</span></div>
  <div class="bd"><h3>${t('act.'+a.k+'.t')}</h3><p>${t('act.'+a.k+'.d')}</p><div class="foot">${price}<button class="bookmini" onclick="openBk('${BMAP[a.k]}')">${t('act.book')}</button></div></div></article>`}).join('');
  wireReveal()}
 
@@ -681,6 +685,7 @@ const FAQ=['q1','q2','q3','q4','q5','q6'];
 function buildFaq(){$('#faqlist').innerHTML=FAQ.map((q,i)=>`<div class="qa"><button aria-expanded="false" onclick="toggleQa(this)"><span>${t('faq.'+q+'q')}</span><svg class="ic chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="ans"><p>${t('faq.'+q+'a')}</p></div></div>`).join('')}
 function toggleQa(b){const qa=b.parentElement;const open=qa.classList.toggle('open');b.setAttribute('aria-expanded',open)}
 
+function loadMap(el){el.outerHTML='<iframe loading="lazy" title="Carte Monastir" style="width:100%;height:100%;min-height:320px;border:0" src="https://www.openstreetmap.org/export/embed.html?bbox=10.78%2C35.74%2C10.86%2C35.80&amp;layer=mapnik&amp;marker=35.7707%2C10.8262"></iframe>'}
 function waQuote(){window.open('https://wa.me/21698591724?text='+encodeURIComponent(t('prices.quote')+' SAAM'),'_blank')}
 
 // ---- booking wizard ----
