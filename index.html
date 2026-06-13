@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAAM Diving Monastir — Plongée sous-marine en Tunisie</title>
+<meta name="description" content="Centre de plongée SAAM à Monastir, Tunisie. Baptêmes, explorations, formations et plongées sur épaves. Réservez votre plongée en ligne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --abyss:#0A2540; --deep-sea:#0D3B66; --ocean:#1E6091; --open-water:#2E8BC0;
+ --teal:#00B3A6; --teal-bright:#00C9A7; --aqua:#5FD3C6;
+ --sand:#F7F3EC; --dune:#EDE6D8; --card:#FAF9F6; --ink:#1B2A33; --muted:#5b6b75;
+ --coral:#FF6B5C; --sunset:#FF7E5F;
+ --grad-hero:linear-gradient(180deg,#0A2540 0%,#0D3B66 55%,#1E6091 100%);
+ --grad-cta:linear-gradient(135deg,#00B3A6 0%,#2E8BC0 100%);
+ --overlay:linear-gradient(180deg,rgba(10,37,64,.30),rgba(10,37,64,.78));
+ --r-card:20px; --r-pill:9999px;
+ --sh-card:0 8px 24px rgba(16,42,67,.10); --sh-lift:0 18px 44px rgba(16,42,67,.18);
+ --ease-out:cubic-bezier(0.16,1,0.3,1); --ease-entrance:cubic-bezier(0.15,0.75,0.35,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--sand);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.08;letter-spacing:-.02em;font-weight:600}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:'Inter';font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:.5em;border:0;cursor:pointer;font-family:'Inter';font-weight:600;font-size:.97rem;padding:.85em 1.4em;border-radius:var(--r-pill);transition:transform .25s var(--ease-out),box-shadow .25s,background .25s}
+.btn-primary{background:var(--grad-cta);color:#fff;box-shadow:0 8px 22px rgba(0,179,166,.35)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,179,166,.45)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(37,211,102,.4)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.2);transform:translateY(-3px)}
+.btn-lg{padding:1.05em 1.8em;font-size:1.05rem}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .3s var(--ease-out)}
+header .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;max-width:1180px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:.6em;font-family:'Fraunces';font-weight:700;font-size:1.25rem;color:#fff;transition:color .3s}
+.logo .mark{width:34px;height:34px;border-radius:10px;background:var(--grad-cta);display:grid;place-items:center;color:#fff;font-size:1.1rem;box-shadow:0 4px 14px rgba(0,179,166,.4)}
+nav.links{display:flex;align-items:center;gap:1.6rem}
+nav.links a{font-weight:500;font-size:.94rem;color:rgba(255,255,255,.92);transition:color .2s}
+nav.links a:hover{color:var(--aqua)}
+.lang{display:flex;gap:.3rem;margin-left:.4rem}
+.lang span{font-size:.74rem;font-weight:600;color:rgba(255,255,255,.6);padding:.2em .45em;border-radius:6px;cursor:pointer}
+.lang span.on{background:rgba(255,255,255,.2);color:#fff}
+.nav-cta{display:flex;align-items:center;gap:.6rem}
+header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 4px 24px rgba(16,42,67,.10)}
+header.scrolled .logo{color:var(--abyss)}
+header.scrolled nav.links a{color:var(--ink)}
+header.scrolled .lang span{color:var(--muted)}
+header.scrolled .lang span.on{background:var(--deep-sea);color:#fff}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+header.scrolled .burger span{background:var(--abyss)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:#0A2540 url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1800&q=80') center/cover;transform:scale(1.05)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:var(--overlay)}
+.hero .wrap{position:relative;z-index:2;padding-top:80px}
+.hero .eyebrow{color:var(--aqua)}
+.hero h1{font-size:clamp(2.7rem,6.2vw,5rem);font-weight:600;margin:.35em 0 .4em;max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.3)}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:46ch;color:rgba(255,255,255,.92);margin-bottom:2rem}
+.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.hero-trust{display:flex;gap:1.8rem;margin-top:3rem;flex-wrap:wrap;align-items:center}
+.hero-trust .item{display:flex;flex-direction:column}
+.hero-trust .item b{font-family:'Fraunces';font-size:1.5rem;font-weight:600}
+.hero-trust .item span{font-size:.8rem;color:rgba(255,255,255,.75);letter-spacing:.02em}
+.hero-trust .div{width:1px;height:34px;background:rgba(255,255,255,.25)}
+.scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.8);font-size:.78rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bob 2s var(--ease-out) infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* WAVE */
+.wave{display:block;width:100%;height:70px;margin-top:-1px}
+
+/* SECTIONS */
+section.block{padding:90px 0}
+.sec-head{max-width:640px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);margin:.25em 0 .3em}
+.sec-head p{color:var(--muted);font-size:1.08rem}
+.center{margin-left:auto;margin-right:auto;text-align:center}
+
+/* TRUST BAR */
+.trustbar{background:var(--abyss);color:#fff;padding:30px 0}
+.trustbar .row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.trustbar .t{display:flex;flex-direction:column;align-items:center;flex:1;min-width:130px}
+.trustbar .t b{font-family:'Fraunces';font-size:1.7rem;font-weight:600;color:var(--aqua)}
+.trustbar .t span{font-size:.82rem;color:rgba(255,255,255,.78);text-align:center;margin-top:2px}
+
+/* CARDS */
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.acard{background:var(--card);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh-card);transition:transform .3s var(--ease-out),box-shadow .3s;display:flex;flex-direction:column}
+.acard:hover{transform:translateY(-7px);box-shadow:var(--sh-lift)}
+.acard .ph{height:170px;background-size:cover;background-position:center;position:relative}
+.acard .ph .tag{position:absolute;top:12px;left:12px;background:rgba(10,37,64,.82);color:#fff;font-size:.72rem;font-weight:600;padding:.3em .7em;border-radius:var(--r-pill);backdrop-filter:blur(4px)}
+.acard .bd{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.acard h3{font-size:1.2rem}
+.acard p{color:var(--muted);font-size:.92rem;flex:1}
+.acard .foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.acard .price{font-family:'Fraunces';font-weight:600;font-size:1.15rem;color:var(--deep-sea)}
+.acard .price small{font-family:'Inter';font-weight:500;color:var(--muted);font-size:.75rem}
+.mini{font-size:.82rem;color:var(--teal);font-weight:600;cursor:pointer;display:inline-flex;gap:4px;align-items:center}
+
+/* DIVE SITES */
+.sites{background:var(--deep-sea);color:#fff;position:relative;overflow:hidden}
+.sites .sec-head p{color:rgba(255,255,255,.8)}
+.lvl{margin-bottom:30px}
+.lvl h4{font-family:'Inter';font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aqua);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:13px 18px;backdrop-filter:blur(8px);transition:.25s}
+.chip:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
+.chip b{display:block;font-weight:600;font-size:.98rem}
+.chip span{font-size:.82rem;color:var(--aqua)}
+.wreck-feat{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;margin-top:50px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:30px;backdrop-filter:blur(8px)}
+.wreck-feat img{border-radius:16px;height:100%;object-fit:cover;min-height:230px}
+.wreck-feat h3{font-size:1.7rem;margin-bottom:.4em}
+.wreck-feat p{color:rgba(255,255,255,.84)}
+.wreck-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.wreck-list .w{background:rgba(0,201,167,.16);color:var(--aqua);font-size:.82rem;font-weight:600;padding:.4em .8em;border-radius:var(--r-pill)}
+
+/* PRICING */
+.pricewrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:start}
+.ptable{background:var(--card);border-radius:var(--r-card);box-shadow:var(--sh-card);overflow:hidden}
+.ptable .pr{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--dune)}
+.ptable .pr:last-child{border-bottom:0}
+.ptable .pr .l{font-weight:500}
+.ptable .pr .l small{display:block;color:var(--muted);font-size:.8rem;font-weight:400}
+.ptable .pr .v{font-family:'Fraunces';font-weight:600;font-size:1.4rem;color:var(--deep-sea)}
+.pside{background:var(--grad-cta);color:#fff;border-radius:var(--r-card);padding:28px;box-shadow:var(--sh-card)}
+.pside h3{font-size:1.4rem;margin-bottom:.5em}
+.pside ul{list-style:none;margin:16px 0;display:flex;flex-direction:column;gap:10px}
+.pside li{display:flex;gap:.6em;font-size:.94rem}
+.pside li::before{content:"✓";font-weight:700}
+
+/* ABOUT / BOAT */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about img{border-radius:24px;box-shadow:var(--sh-lift);height:420px;object-fit:cover;width:100%}
+.about .stats{display:flex;gap:26px;margin-top:24px}
+.about .stats .s b{font-family:'Fraunces';font-size:1.9rem;color:var(--deep-sea);font-weight:600}
+.about .stats .s span{font-size:.84rem;color:var(--muted)}
+.certrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.cert{background:#fff;border:1px solid var(--dune);border-radius:12px;padding:.6em 1em;font-weight:700;font-size:.82rem;color:var(--deep-sea);box-shadow:var(--sh-card)}
+
+/* REVIEWS */
+.reviews{background:var(--dune)}
+.rcard{background:#fff;border-radius:var(--r-card);padding:26px;box-shadow:var(--sh-card)}
+.rcard .stars{color:#FFB400;font-size:1rem;letter-spacing:2px;margin-bottom:10px}
+.rcard p{font-size:1rem;color:var(--ink);margin-bottom:16px}
+.rcard .who{display:flex;align-items:center;gap:12px}
+.rcard .av{width:42px;height:42px;border-radius:50%;background:var(--grad-cta);color:#fff;display:grid;place-items:center;font-weight:700}
+.rcard .who b{font-size:.92rem}
+.rcard .who span{font-size:.8rem;color:var(--muted)}
+
+/* CONTACT */
+.contact{background:var(--abyss);color:#fff}
+.contact .sec-head p{color:rgba(255,255,255,.8)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cinfo .ci{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
+.cinfo .ci .ic{width:44px;height:44px;border-radius:12px;background:rgba(0,201,167,.18);color:var(--aqua);display:grid;place-items:center;flex-shrink:0;font-size:1.1rem}
+.cinfo .ci b{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--aqua);margin-bottom:2px}
+.cinfo .ci a,.cinfo .ci span{color:rgba(255,255,255,.9)}
+.cmap{border-radius:20px;overflow:hidden;min-height:300px;border:1px solid rgba(255,255,255,.15)}
+.cmap iframe{width:100%;height:100%;min-height:300px;border:0;filter:grayscale(.2) contrast(1.05)}
+
+footer{background:#06192e;color:rgba(255,255,255,.7);padding:30px 0;text-align:center;font-size:.86rem}
+footer .lk{color:var(--aqua);font-weight:600}
+
+/* FLOATING WA */
+.fab{position:fixed;bottom:22px;right:22px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.5);color:#fff;font-size:1.6rem;transition:transform .25s}
+.fab:hover{transform:scale(1.08)}
+
+/* BOOKING MODAL */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.open{display:flex}
+.modal .ov{position:absolute;inset:0;background:rgba(10,37,64,.65);backdrop-filter:blur(4px)}
+.sheet{position:relative;background:var(--sand);border-radius:24px;width:100%;max-width:560px;max-height:92vh;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .4s var(--ease-entrance)}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.sheet .top{position:sticky;top:0;background:var(--sand);padding:20px 24px 12px;z-index:2}
+.sheet .top .x{position:absolute;top:18px;right:18px;background:#fff;border:1px solid var(--dune);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1.1rem;color:var(--muted)}
+.steps{display:flex;gap:8px;margin-top:14px}
+.steps .st{flex:1;height:5px;border-radius:3px;background:var(--dune);transition:.3s}
+.steps .st.on{background:var(--grad-cta)}
+.sbody{padding:8px 24px 24px}
+.sbody h3{font-size:1.45rem;margin-bottom:4px}
+.sbody .sub{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{background:#fff;border:2px solid var(--dune);border-radius:16px;padding:16px;cursor:pointer;transition:.2s;display:flex;flex-direction:column;gap:4px}
+.opt:hover{border-color:var(--open-water)}
+.opt.sel{border-color:var(--teal);background:rgba(0,201,167,.06)}
+.opt .em{font-size:1.5rem}
+.opt b{font-size:.98rem}
+.opt span{font-size:.8rem;color:var(--muted)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px}
+.cal .dow{text-align:center;font-size:.7rem;color:var(--muted);font-weight:600;padding:4px 0}
+.cal .d{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:10px;background:#fff;border:1px solid var(--dune);cursor:pointer;font-size:.9rem;font-weight:500;transition:.15s;position:relative}
+.cal .d:hover:not(.dis){border-color:var(--teal)}
+.cal .d.dis{opacity:.32;cursor:not-allowed;text-decoration:line-through}
+.cal .d.sel{background:var(--grad-cta);color:#fff;border-color:transparent}
+.cal .d .sp{font-size:.56rem;color:var(--teal);font-weight:600}
+.cal .d.sel .sp{color:#fff}
+.cal .empty{background:transparent;border:0}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:.84rem;font-weight:600;margin-bottom:6px}
+.fld input{width:100%;padding:.8em 1em;border:1px solid var(--dune);border-radius:12px;font-family:inherit;font-size:.95rem;background:#fff}
+.fld input:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,201,167,.15)}
+.step-counter{display:flex;align-items:center;gap:12px;justify-content:center}
+.counter{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--dune);border-radius:var(--r-pill);padding:6px}
+.counter button{width:34px;height:34px;border-radius:50%;border:0;background:var(--deep-sea);color:#fff;font-size:1.2rem;cursor:pointer}
+.counter b{min-width:24px;text-align:center;font-family:'Fraunces';font-size:1.2rem}
+.slots{display:flex;gap:10px;margin-top:14px}
+.slot{flex:1;padding:.7em;text-align:center;border:2px solid var(--dune);border-radius:12px;cursor:pointer;font-weight:600;font-size:.9rem;background:#fff}
+.slot.sel{border-color:var(--teal);background:rgba(0,201,167,.06)}
+.summary{background:#fff;border:1px solid var(--dune);border-radius:16px;padding:18px;margin:16px 0}
+.summary .sr{display:flex;justify-content:space-between;padding:7px 0;font-size:.92rem;border-bottom:1px dashed var(--dune)}
+.summary .sr:last-child{border-bottom:0}
+.summary .sr span{color:var(--muted)}
+.summary .sr b{font-weight:600}
+.snav{display:flex;gap:10px;margin-top:8px}
+.snav .btn{flex:1;justify-content:center}
+.back{background:#fff;border:1px solid var(--dune);color:var(--ink)}
+.conf{text-align:center;padding:14px 0}
+.conf .check{width:84px;height:84px;border-radius:50%;background:var(--grad-cta);color:#fff;display:grid;place-items:center;font-size:2.6rem;margin:0 auto 18px;animation:pop .5s var(--ease-entrance)}
+.conf .ref{font-family:'Fraunces';font-weight:700;font-size:1.3rem;color:var(--deep-sea);background:var(--dune);border-radius:12px;padding:.5em 1em;display:inline-block;margin:8px 0 16px;letter-spacing:.05em}
+.trustmini{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.trustmini span{font-size:.74rem;color:var(--muted);background:#fff;border:1px solid var(--dune);border-radius:var(--r-pill);padding:.35em .8em}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease-entrance),transform .7s var(--ease-entrance)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+ .g3,.g4{grid-template-columns:repeat(2,1fr)}
+ .about,.pricewrap,.cgrid,.wreck-feat{grid-template-columns:1fr}
+ .about img{height:300px}
+ nav.links{display:none}
+ .burger{display:flex}
+ .hero-trust .div{display:none}
+}
+@media(max-width:560px){
+ .g3,.g4,.g2,.opts{grid-template-columns:1fr}
+ section.block{padding:64px 0}
+ .nav-cta .btn span.lbl{display:none}
+}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.scroll-ind{animation:none}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+ <div class="bar">
+   <a class="logo" href="#"><span class="mark">🐠</span> SAAM <span style="font-weight:400;opacity:.7;font-size:.9rem">Diving Monastir</span></a>
+   <nav class="links">
+     <a href="#activites">Activités</a>
+     <a href="#sites">Sites de plongée</a>
+     <a href="#tarifs">Tarifs</a>
+     <a href="#avis">Avis</a>
+     <a href="#contact">Contact</a>
+     <div class="lang"><span class="on">FR</span><span>EN</span><span>DE</span></div>
+   </nav>
+   <div class="nav-cta">
+     <button class="btn btn-primary" onclick="openBk()">Réserver</button>
+     <button class="burger" onclick="document.querySelector('nav.links').scrollIntoView()"><span></span><span></span><span></span></button>
+   </div>
+ </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+ <div class="hero-bg"></div>
+ <div class="wrap">
+   <div class="eyebrow rv">Centre de plongée · Monastir, Tunisie · depuis 2008</div>
+   <h1 class="rv">Plongez en Méditerranée, au cœur de Monastir.</h1>
+   <p class="lead rv">Baptêmes, explorations et plongées sur épaves avec une équipe brevetée CMAS, FFESSM, PADI et SSI. Réservez votre plongée en ligne en deux minutes.</p>
+   <div class="hero-cta rv">
+     <button class="btn btn-primary btn-lg" onclick="openBk()">Réserver une plongée</button>
+     <a class="btn btn-ghost btn-lg" href="https://wa.me/21698591724" target="_blank">💬 WhatsApp</a>
+   </div>
+   <div class="hero-trust rv">
+     <div class="item"><b>4,5/5</b><span>Avis plongeurs</span></div>
+     <div class="div"></div>
+     <div class="item"><b>15+</b><span>Sites de plongée</span></div>
+     <div class="div"></div>
+     <div class="item"><b>2 épaves</b><span>Avion &amp; hélicoptère</span></div>
+     <div class="div"></div>
+     <div class="item"><b>Depuis 2008</b><span>Équipe brevetée</span></div>
+   </div>
+ </div>
+ <div class="scroll-ind">Découvrir ▾</div>
+</section>
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#0A2540" d="M0,40 C360,80 720,0 1080,30 C1260,45 1380,38 1440,32 L1440,70 L0,70 Z"></path></svg>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+ <div class="wrap"><div class="row">
+   <div class="t"><b>CMAS · FFESSM</b><span>MF2 · 3ᵉ degré</span></div>
+   <div class="t"><b>PADI · SSI</b><span>Brevets internationaux</span></div>
+   <div class="t"><b data-count="20">0</b><span>places à bord du SAADIA</span></div>
+   <div class="t"><b>5–25 min</b><span>du club à chaque site</span></div>
+   <div class="t"><b>CB acceptée</b><span>Paiement sécurisé</span></div>
+ </div></div>
+</div>
+
+<!-- ACTIVITES -->
+<section class="block" id="activites">
+ <div class="wrap">
+   <div class="sec-head rv">
+     <div class="eyebrow">Nos activités</div>
+     <h2>Une plongée pour chaque niveau.</h2>
+     <p>Du tout premier baptême à l'exploration des épaves, choisissez votre expérience et réservez votre place en ligne.</p>
+   </div>
+   <div class="grid g3">
+     <div class="acard rv"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&q=80')"><span class="tag">Débutants</span></div><div class="bd"><h3>Baptême découverte</h3><p>Votre première plongée, encadrée individuellement. Aucune expérience requise, dès 8 ans. En piscine, à la plage ou en bateau.</p><div class="foot"><span class="price">45&nbsp;€ <small>/ plongée</small></span><span class="mini" onclick="openBk('bapteme')">Réserver →</span></div></div></div>
+     <div class="acard rv"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1559825481-12a05cc00344?w=800&q=80')"><span class="tag">Brevetés</span></div><div class="bd"><h3>Plongée d'exploration</h3><p>Pour plongeurs brevetés : tombants, rochers et grands fonds de la baie de Monastir, accompagnés par nos moniteurs.</p><div class="foot"><span class="price">45&nbsp;€ <small>/ plongée</small></span><span class="mini" onclick="openBk('exploration')">Réserver →</span></div></div></div>
+     <div class="acard rv"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=800&q=80')"><span class="tag">Formations</span></div><div class="bd"><h3>Formations tous niveaux</h3><p>Du Niveau 1 à la formation moniteur, avec CMAS, FFESSM, PADI et SSI. Théorie, piscine et milieu naturel.</p><div class="foot"><span class="price">Sur devis</span><span class="mini" onclick="openBk('formation')">Réserver →</span></div></div></div>
+     <div class="acard rv"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=800&q=80&sat=-30')"><span class="tag">Aventure</span></div><div class="bd"><h3>Plongée sur épave</h3><p>Explorez l'épave d'avion (14 m), l'hélicoptère (21 m) et les cargos (jusqu'à 58 m). Réservé aux plongeurs confirmés.</p><div class="foot"><span class="price">75&nbsp;€ <small>/ 2 plongées</small></span><span class="mini" onclick="openBk('exploration')">Réserver →</span></div></div></div>
+     <div class="acard rv"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=800&q=80')"><span class="tag">En famille</span></div><div class="bd"><h3>Snorkeling &amp; sorties</h3><p>Palmes-masque-tuba au-dessus des plus beaux rochers, ou simple passage à bord pour accompagner vos proches.</p><div class="foot"><span class="price">25&nbsp;€ <small>/ snorkeling</small></span><span class="mini" onclick="openBk('snorkeling')">Réserver →</span></div></div></div>
+     <div class="acard rv"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80')"><span class="tag">Sensations</span></div><div class="bd"><h3>Plongée de nuit</h3><p>Une plongée magique à la tombée du jour, quand la faune nocturne s'éveille. Pour plongeurs brevetés.</p><div class="foot"><span class="price">Sur devis</span><span class="mini" onclick="openBk('exploration')">Réserver →</span></div></div></div>
+   </div>
+ </div>
+</section>
+
+<!-- SITES -->
+<section class="block sites" id="sites">
+ <div class="wrap">
+   <div class="sec-head rv">
+     <div class="eyebrow" style="color:var(--aqua)">Sites de plongée</div>
+     <h2>15 spots, tous à 5–25 minutes du club.</h2>
+     <p>Des rochers ensoleillés pour débuter aux épaves profondes pour les confirmés, la baie de Monastir a un site pour chaque palanquée.</p>
+   </div>
+   <div class="lvl rv"><h4>Plongeurs débutants</h4><div class="chips">
+     <div class="chip"><b>Rocher Skanes</b><span>2 – 6 m</span></div>
+     <div class="chip"><b>Rocher Ribat</b><span>4 – 10 m</span></div>
+     <div class="chip"><b>Rocher la Falaise</b><span>2 – 15 m</span></div>
+   </div></div>
+   <div class="lvl rv"><h4>Plongeurs brevetés</h4><div class="chips">
+     <div class="chip"><b>Le Tombant</b><span>2 – 18 m</span></div>
+     <div class="chip"><b>Plongée sur rochers</b><span>6 – 14 m</span></div>
+     <div class="chip"><b>Petit rocher</b><span>11 – 18 m</span></div>
+     <div class="chip"><b>Grand rocher</b><span>14 – 33 m</span></div>
+   </div></div>
+   <div class="wreck-feat rv">
+     <div>
+       <div class="eyebrow" style="color:var(--aqua)">Plongeurs confirmés</div>
+       <h3>Les épaves de la baie</h3>
+       <p>Quatre épaves reposent au large de Monastir, de l'avion posé à 14 mètres aux grands cargos par 58 mètres de fond. Des plongées techniques inoubliables, encadrées par nos moniteurs MF2.</p>
+       <div class="wreck-list">
+         <span class="w">✈️ Épave d'avion · 14 m</span>
+         <span class="w">🚁 Hélicoptère · 21 m</span>
+         <span class="w">🚢 Cargo · 48–51 m</span>
+         <span class="w">🚢 Grand cargo · 48–58 m</span>
+       </div>
+     </div>
+     <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=800&q=80" alt="Épave sous-marine">
+   </div>
+ </div>
+</section>
+
+<!-- TARIFS -->
+<section class="block" id="tarifs">
+ <div class="wrap">
+   <div class="sec-head center rv">
+     <div class="eyebrow">Tarifs</div>
+     <h2>Des prix clairs, sans surprise.</h2>
+     <p>Tarifs à l'unité ci-dessous. Forfaits, groupes et séjours sur simple demande.</p>
+   </div>
+   <div class="pricewrap rv">
+     <div class="ptable">
+       <div class="pr"><div class="l">1 plongée en mer<small>Encadrement &amp; bloc inclus</small></div><div class="v">45&nbsp;€</div></div>
+       <div class="pr"><div class="l">2 plongées en mer<small>La sortie journée</small></div><div class="v">75&nbsp;€</div></div>
+       <div class="pr"><div class="l">Snorkeling<small>Palmes · masque · tuba</small></div><div class="v">25&nbsp;€</div></div>
+       <div class="pr"><div class="l">Passager à bord<small>Accompagnant non-plongeur</small></div><div class="v">15&nbsp;€</div></div>
+     </div>
+     <div class="pside">
+       <h3>Forfaits &amp; séjours</h3>
+       <p style="opacity:.92;font-size:.95rem">Plusieurs jours de plongée, formations complètes ou groupes ? On vous prépare un devis sur mesure.</p>
+       <ul><li>Location de matériel complet</li><li>Formations CMAS / PADI / SSI</li><li>Tarifs dégressifs en forfait</li><li>Carte bancaire acceptée</li></ul>
+       <button class="btn btn-wa" style="width:100%;justify-content:center;margin-top:6px" onclick="window.open('https://wa.me/21698591724','_blank')">💬 Demander un devis</button>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- ABOUT / BOAT -->
+<section class="block" id="apropos" style="background:var(--card)">
+ <div class="wrap">
+   <div class="about">
+     <img src="https://images.unsplash.com/photo-1502209524164-acea936639a2?w=900&q=80" alt="Bateau de plongée" class="rv">
+     <div class="rv">
+       <div class="eyebrow">Le club &amp; le bateau</div>
+       <h2 style="font-size:clamp(1.9rem,3.5vw,2.7rem);margin:.25em 0 .4em">Une équipe brevetée, un bateau rien que pour la plongée.</h2>
+       <p style="color:var(--muted)">SAAM accueille les plongeurs à Monastir depuis 2008. Notre bateau, le <b>SAADIA</b> (9 m, 20 places), vous emmène en quelques minutes sur les plus beaux sites de la baie. Encadrement par Hosni Necib et son équipe, moniteurs CMAS 3ᵉ degré et MF2.</p>
+       <div class="stats">
+         <div class="s"><b>9 m</b><br><span>Bateau SAADIA</span></div>
+         <div class="s"><b>20</b><br><span>places à bord</span></div>
+         <div class="s"><b>16+ ans</b><br><span>d'expérience</span></div>
+       </div>
+       <div class="certrow">
+         <span class="cert">CMAS 3★</span><span class="cert">FFESSM MF2</span><span class="cert">PADI</span><span class="cert">SSI</span><span class="cert">FAST</span>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="block reviews" id="avis">
+ <div class="wrap">
+   <div class="sec-head center rv">
+     <div class="eyebrow">Avis plongeurs</div>
+     <h2>Ils ont plongé avec nous.</h2>
+     <p>4,5/5 sur les avis voyageurs — l'accueil de Hosni et de l'équipe revient à chaque fois.</p>
+   </div>
+   <div class="grid g3">
+     <div class="rcard rv"><div class="stars">★★★★★</div><p>"Hosni et toute l'équipe sont adorables et très professionnels. Ils s'assurent que chacun profite de sa plongée, débutant comme confirmé. On reviendra !"</p><div class="who"><div class="av">M</div><div><b>Marie L.</b><span>France · Baptême</span></div></div></div>
+     <div class="rcard rv"><div class="stars">★★★★★</div><p>"Great wreck dives and a friendly, safety-focused crew. Did 6 dives over the week, every one well organised. Highly recommend SAAM."</p><div class="who"><div class="av">J</div><div><b>James W.</b><span>UK · Exploration</span></div></div></div>
+     <div class="rcard rv"><div class="stars">★★★★☆</div><p>"Tolles Tauchzentrum in Monastir. Sehr nettes Team, gutes Material und schöne Tauchplätze. Das Boot ist klein, aber alles funktioniert bestens."</p><div class="who"><div class="av">A</div><div><b>Andreas K.</b><span>Deutschland · Formation</span></div></div></div>
+   </div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block contact" id="contact">
+ <div class="wrap">
+   <div class="sec-head rv">
+     <div class="eyebrow" style="color:var(--aqua)">Contact</div>
+     <h2>Prêt à plonger ?</h2>
+     <p>Réservez en ligne, ou écrivez-nous directement sur WhatsApp — on vous répond dans la journée.</p>
+   </div>
+   <div class="cgrid">
+     <div class="cinfo rv">
+       <div class="ci"><div class="ic">💬</div><div><b>Téléphone / WhatsApp</b><a href="https://wa.me/21698591724">+216 98 59 17 24</a></div></div>
+       <div class="ci"><div class="ic">✉️</div><div><b>Email</b><a href="mailto:saam@diving-monastir.com">saam@diving-monastir.com</a></div></div>
+       <div class="ci"><div class="ic">📍</div><div><b>Adresse</b><span>Monastir &amp; port de Sousse · Tunisie</span></div></div>
+       <div class="ci"><div class="ic">🤿</div><div><b>Directeur</b><span>Hosni Necib · moniteur CMAS 3★ / MF2</span></div></div>
+       <div style="display:flex;gap:10px;margin-top:8px">
+         <button class="btn btn-primary" onclick="openBk()">Réserver une plongée</button>
+         <a class="btn btn-wa" href="https://wa.me/21698591724" target="_blank">WhatsApp</a>
+       </div>
+     </div>
+     <div class="cmap rv">
+       <iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=10.78%2C35.74%2C10.86%2C35.80&amp;layer=mapnik&amp;marker=35.7707%2C10.8262" title="Monastir"></iframe>
+     </div>
+   </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+   SAAM — Société des Animations Aquatiques de Monastir · Tunisie<br>
+   <span style="opacity:.6">Maquette de démonstration · design &amp; développement par <a class="lk" href="https://likwiid.com" target="_blank">Likwiid</a></span>
+ </div>
+</footer>
+
+<a class="fab" href="https://wa.me/21698591724" target="_blank" aria-label="WhatsApp">💬</a>
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="bk">
+ <div class="ov" onclick="closeBk()"></div>
+ <div class="sheet">
+   <div class="top">
+     <button class="x" onclick="closeBk()">✕</button>
+     <div class="eyebrow">Réserver une plongée</div>
+     <div class="steps"><div class="st on" id="st1"></div><div class="st" id="st2"></div><div class="st" id="st3"></div></div>
+   </div>
+   <div class="sbody" id="sbody"></div>
+ </div>
+</div>
+
+<script>
+// ---- reveal on scroll ----
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3*60)+'ms';io.observe(el)});
+// ---- sticky header ----
+addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>40));
+// ---- counter ----
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,t=+el.dataset.count;let n=0;const step=()=>{n+=Math.ceil(t/30);if(n>=t){el.textContent=t}else{el.textContent=n;requestAnimationFrame(step)}};step();cio.unobserve(el)}}));
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+// ---- booking wizard ----
+const ACT={bapteme:{e:'🤿',n:'Baptême découverte',d:'Aucune expérience requise'},exploration:{e:'🐠',n:'Plongée d\'exploration',d:'Plongeurs brevetés'},formation:{e:'🎓',n:'Formation',d:'Tous niveaux'},snorkeling:{e:'🌊',n:'Snorkeling',d:'En famille'}};
+let bk={act:null,date:null,slot:null,people:1,name:'',phone:''};
+const body=document.getElementById('sbody');
+function setStep(n){[1,2,3].forEach(i=>document.getElementById('st'+i).classList.toggle('on',i<=n))}
+function openBk(act){document.getElementById('bk').classList.add('open');document.body.style.overflow='hidden';bk={act:act||null,date:null,slot:null,people:1,name:'',phone:''};act?step2():step1()}
+function closeBk(){document.getElementById('bk').classList.remove('open');document.body.style.overflow=''}
+function step1(){setStep(1);body.innerHTML=`<h3>Quelle plongée ?</h3><div class="sub">Choisissez votre activité pour commencer.</div><div class="opts">${Object.entries(ACT).map(([k,a])=>`<div class="opt ${bk.act===k?'sel':''}" onclick="bk.act='${k}';step2()"><div class="em">${a.e}</div><b>${a.n}</b><span>${a.d}</span></div>`).join('')}</div>`}
+function step2(){setStep(2);const days=buildCal();body.innerHTML=`<h3>Quand souhaitez-vous plonger ?</h3><div class="sub">${ACT[bk.act].e} ${ACT[bk.act].n} — choisissez une date.</div>
+ <div class="cal"><div class="dow">L</div><div class="dow">M</div><div class="dow">M</div><div class="dow">J</div><div class="dow">V</div><div class="dow">S</div><div class="dow">D</div>${days}</div>
+ <div style="margin-top:18px"><label style="font-size:.84rem;font-weight:600">Créneau</label><div class="slots"><div class="slot ${bk.slot==='Matin'?'sel':''}" onclick="bk.slot='Matin';step2()">🌅 Matin · 09:00</div><div class="slot ${bk.slot==='Après-midi'?'sel':''}" onclick="bk.slot='Après-midi';step2()">☀️ Après-midi · 14:00</div></div></div>
+ <div style="margin-top:18px"><label style="font-size:.84rem;font-weight:600">Plongeurs</label><div class="step-counter"><div class="counter"><button onclick="bk.people=Math.max(1,bk.people-1);step2()">−</button><b>${bk.people}</b><button onclick="bk.people=Math.min(12,bk.people+1);step2()">+</button></div></div></div>
+ <div class="snav"><button class="btn back" onclick="step1()">← Retour</button><button class="btn btn-primary" ${bk.date&&bk.slot?'':'disabled style=opacity:.5'} onclick="step3()">Continuer →</button></div>`}
+function buildCal(){const today=new Date();let html='';const first=new Date(today.getFullYear(),today.getMonth(),1);let pad=(first.getDay()+6)%7;for(let i=0;i<pad;i++)html+='<div class="empty"></div>';const dim=new Date(today.getFullYear(),today.getMonth()+1,0).getDate();for(let d=1;d<=dim;d++){const dt=new Date(today.getFullYear(),today.getMonth(),d);const past=dt<new Date(today.toDateString());const full=[ (today.getDate()+2),(today.getDate()+5)].includes(d);const dis=past||full;const spots=[2,4,5,6,3][d%5]+1;const iso=dt.toISOString().slice(0,10);html+=`<div class="d ${dis?'dis':''} ${bk.date===iso?'sel':''}" ${dis?'':`onclick="bk.date='${iso}';step2()"`}>${d}${dis||past?'':`<span class="sp">${spots} pl.</span>`}</div>`}return html}
+function step3(){if(!bk.date||!bk.slot)return;setStep(3);body.innerHTML=`<h3>Vos coordonnées</h3><div class="sub">Dernière étape — on confirme tout sur WhatsApp.</div>
+ <div class="fld"><label>Nom complet</label><input id="bn" placeholder="Votre nom" value="${bk.name}"></div>
+ <div class="fld"><label>WhatsApp / téléphone</label><input id="bp" placeholder="+33 ..." value="${bk.phone}"></div>
+ <div class="summary"><div class="sr"><span>Activité</span><b>${ACT[bk.act].n}</b></div><div class="sr"><span>Date</span><b>${fmt(bk.date)} · ${bk.slot}</b></div><div class="sr"><span>Plongeurs</span><b>${bk.people}</b></div></div>
+ <div class="snav"><button class="btn back" onclick="step2()">← Retour</button><button class="btn btn-primary" onclick="confirmBk()">Confirmer la réservation</button></div>
+ <div class="trustmini"><span>✓ Annulation gratuite 24h</span><span>✓ Aucun paiement maintenant</span><span>✓ Moniteurs brevetés</span></div>`}
+function confirmBk(){bk.name=document.getElementById('bn').value||'plongeur';bk.phone=document.getElementById('bp').value;const ref='DIVE-'+Math.random().toString(36).slice(2,7).toUpperCase();setStep(3);
+ const msg=encodeURIComponent(`Bonjour SAAM ! Je souhaite réserver : ${ACT[bk.act].n}, le ${fmt(bk.date)} (${bk.slot}), ${bk.people} plongeur(s). Réf ${ref}. Nom : ${bk.name}.`);
+ body.innerHTML=`<div class="conf"><div class="check">✓</div><h3>C'est presque fait, ${bk.name.split(' ')[0]} !</h3><div class="sub">Votre place est réservée. Nous confirmons les détails sur WhatsApp dans la journée.</div><div class="ref">${ref}</div>
+ <div class="summary" style="text-align:left"><div class="sr"><span>Activité</span><b>${ACT[bk.act].n}</b></div><div class="sr"><span>Date</span><b>${fmt(bk.date)} · ${bk.slot}</b></div><div class="sr"><span>Plongeurs</span><b>${bk.people}</b></div></div>
+ <p style="font-size:.84rem;color:var(--muted);margin:6px 0 14px">Aucun paiement maintenant — réglez sur place ou au moment de la confirmation.</p>
+ <button class="btn btn-wa btn-lg" style="width:100%;justify-content:center" onclick="window.open('https://wa.me/21698591724?text=${msg}','_blank')">💬 Confirmer sur WhatsApp</button>
+ <button class="btn back" style="width:100%;justify-content:center;margin-top:10px" onclick="closeBk()">Fermer</button></div>`}
+function fmt(iso){const d=new Date(iso);return d.toLocaleDateString('fr-FR',{weekday:'short',day:'numeric',month:'long'})}
+</script>
+</body>
+</html>
