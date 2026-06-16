@@ -415,7 +415,7 @@ footer a:hover{color:var(--aqua)}
      <div class="div"></div>
      <div class="item"><b data-i18n="hero.trust3v">2 épaves</b><span data-i18n="hero.trust3">Avion et hélicoptère</span></div>
      <div class="div"></div>
-     <div class="item"><b data-i18n="hero.trust4v">Depuis 2008</b><span data-i18n="hero.trust4">Équipe brevetée</span></div>
+     <div class="item"><b data-i18n="hero.trust4v">Depuis 2004</b><span data-i18n="hero.trust4">Équipe brevetée</span></div>
    </div>
  </div>
  <div class="scroll-ind" aria-hidden="true"><span data-i18n="hero.scroll">Découvrir</span><svg class="ic" width="16" height="16" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
@@ -775,7 +775,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){if(modal.classList.contains(
  if(e.key==='Tab'&&modal.classList.contains('open')){const f=[...modal.querySelectorAll('button,input,a[href],[tabindex]')].filter(x=>x.offsetParent);if(!f.length)return;const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
 
 // init
-buildActivities();buildFaq();wireReveal();$$('[data-count]').forEach(el=>cio.observe(el));
+applyLang('fr');buildActivities();buildFaq();wireReveal();$$('[data-count]').forEach(el=>cio.observe(el));
 </script>
 </body>
 </html>
